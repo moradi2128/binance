@@ -1,0 +1,24 @@
+.btn-primary,
+.btn {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  padding: 0.7rem;
+  font-size: large;
+  font-weight: 500;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+}
+.btn {
+  color: var(--color-white);
+}
+.btn-primary {
+  background-color: var(--bg-primary);
+  color: var(--color-dark);
+}
+.btn-primary:hover {
+  color: var(--color-dark);
+  background-color: rgb(252, 213, 53);
+  opacity: 0.9;
+}

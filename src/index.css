@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: rgb(22, 21, 26);
+  --bg-dark-components: rgb(22, 26, 30);
+  --bg-white: rgb(250, 250, 250);
+  --bg-primary-dark: rgb(30, 32, 38);
+  --bg-primary: rgb(252, 213, 53);
+
+  --color-primary: rgb(240, 185, 11);
+  --color-main: rgb(132, 142, 156);
+  --color-white: rgb(234, 236, 239);
+  --color-dark: rgb(30, 35, 41);
+
+  --color-green: rgb(14, 203, 129);
+  --color-red: rgb(246, 70, 93);
+}
+body {
+  font-family: "Smooch Sans", sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--color-white);
+}
+
+/*==== scroll bar style ==== */
+.scrollBar:hover::-webkit-scrollbar,
+::-webkit-scrollbar {
+  width: 5px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(94, 102, 115);
+  border-radius: 3px;
+  height: 90px;
+}
+
+/* ==== General Style ==== */
+a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-primary);
+}
+li {
+  list-style: none;
+}

@@ -1,0 +1,31 @@
+.badge {
+  align-content: center;
+  margin-left: 0.5rem;
+  display: flex;
+  position: relative;
+  border-radius: 4px;
+  padding: 1px 4px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  background-color: var(--bg-primary);
+  color: var(--color-dark);
+}
+.badge::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  left: -3px;
+  top: 3px;
+  border-width: 6px 6px 6px 0px;
+  border-left-style: initial;
+  border-left-color: initial;
+  border-top-style: solid;
+  border-top-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  border-right-style: solid;
+  border-right-color: var(--bg-primary);
+}
