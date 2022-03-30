@@ -1,0 +1,26 @@
+.chart {
+  grid-area: chart;
+  background-color: var(--bg-dark-components);
+  height: 100%;
+  overflow: hidden;
+}
+.chart-container {
+  height: 100%;
+}
+/* === table row Header  */
+.chart-trHeader {
+  padding: 1rem;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.chart-trHeader-item {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  color: var(--color-main);
+}
+.chart-trHeader-item:hover,
+.chart-trHeader-item.active {
+  color: var(--color-primary);
+}

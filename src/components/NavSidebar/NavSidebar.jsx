@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./NavSidebar.css";
 
 // === Components ===
@@ -11,11 +11,20 @@ import { BsArrowRightShort } from "react-icons/bs";
 
 const NavItem = (props) => {
   const [arrow, setArrow] = useState("");
+  // === Media Query 768 px ===
+  const [matchesM, setMatchesM] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  );
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 768px)")
+      .addEventListener("change", (e) => setMatchesM(e.matches));
+  }, []);
   return (
     <>
       {props.data.slice(props.itemFirst, props.item).map((item) => {
         return (
-          <div className="navItem" key={item.id}>
+          <a href={item.href} className="navItem" key={item.id}>
             <div
               className="nav-item"
               onClick={() => setArrow(item.id === arrow ? false : item.id)}
@@ -25,11 +34,7 @@ const NavItem = (props) => {
                 <div className="navItem-description">
                   <div className="title-container">
                     {/* === Title Item List ==== */}
-                    {item.href ? (
-                      <a href={item.href}>{item.title}</a>
-                    ) : (
-                      <h4>{item.title}</h4>
-                    )}
+                    <h4>{item.title}</h4>
                     {/* === Badge */}
                     {item.badge && <Badge>{item.badge}</Badge>}
                   </div>
@@ -64,15 +69,28 @@ const NavItem = (props) => {
                 }
               >
                 {item.subset.map((subsetItem) => {
-                  return (
-                    <a key={subsetItem.id} href="" className="nav-item-inner">
+                  return matchesM ? (
+                    <a
+                      href=""
+                      key={subsetItem.id}
+                      className="nav-item-container"
+                    >
+                      <span className="nav-item-inner">{subsetItem.title}</span>
+                      {props.arrowRightInner && (
+                        <span className="arrow-right">
+                          <BsArrowRightShort />
+                        </span>
+                      )}
+                    </a>
+                  ) : (
+                    <a href="" className="nav-item-inner" key={subsetItem.id}>
                       {subsetItem.title}
                     </a>
                   );
                 })}
               </ul>
             )}
-          </div>
+          </a>
         );
       })}
       {arrow !== "" && <Backdrop click={() => setArrow("")} />}

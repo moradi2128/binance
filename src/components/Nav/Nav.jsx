@@ -25,19 +25,10 @@ const Nav = () => {
           <h1>BINANCE</h1>
         </a>
         <div className="project-menu">
-          <span
-            className="project-menu-icon"
-            onClick={() => setToggleProjectMenu(!toggleProjectMenu)}
-          >
+          <span className="project-menu-icon">
             <CgMenuGridR />
           </span>
-          <div
-            className={
-              toggleProjectMenu
-                ? "project-menu-inner-container project-menu-show"
-                : "project-menu-inner-container"
-            }
-          >
+          <div className="project-menu-inner-container">
             <div className="project-menu-inner">
               <NavSidebar
                 data={navItem[navItem.length - 1].subset}
@@ -46,11 +37,9 @@ const Nav = () => {
             </div>
           </div>
         </div>
-        {toggleProjectMenu && (
-          <Backdrop click={() => setToggleProjectMenu(false)} />
-        )}
+
         <div className="navbar-left-right">
-          <NavSidebar data={navItem} item={7} />
+          <NavSidebar data={navItem} item={7} arrowRightInner="true"/>
         </div>
       </div>
       <div className="navbar-right">

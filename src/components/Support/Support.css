@@ -34,17 +34,24 @@
 .support-item span {
   flex-shrink: 0;
 }
-.support-arrow {
+.support-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.support-arrow,
+.support-close-icon {
   display: flex;
   align-items: center;
   color: rgb(132, 142, 156);
   margin-top: 5px;
-  transition: all 0.3s ease 0s;
+  transition: all 0.2s ease 0s;
   cursor: pointer;
 }
 .arrow-open {
   transform: rotate(180deg);
 }
+
 @media screen and (min-width: 1024px) {
   .support-container {
     display: flex;

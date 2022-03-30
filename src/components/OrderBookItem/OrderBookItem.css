@@ -1,0 +1,25 @@
+.orderBook .market-list-inner {
+  overflow: auto;
+  margin: 5px 0;
+}
+
+/* ScrollBar Style  */
+.orderBook .market-list-inner::-webkit-scrollbar-thumb {
+  visibility: hidden;
+}
+
+.overflow-unset {
+  overflow: unset !important;
+}
+@media screen and (min-width: 768px) {
+  /* Hover Item List Style */
+  .orderBook .orderBook-list-container .market-list-header-container:hover {
+    border-top: 1px dashed rgb(132, 142, 156);
+  }
+  .orderBook
+    .orderBook-list-container
+    .market-list-header-container:hover
+    ~ .market-list-header-container {
+    background-color: rgb(43, 49, 57);
+  }
+}

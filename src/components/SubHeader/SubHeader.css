@@ -3,15 +3,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 .subHeader-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: end;
-  padding: 1.5rem 1rem;
+  align-items: start;
+  padding: 1rem;
   gap: 1.5rem;
 }
 .subHeader-arrow {
@@ -46,10 +46,17 @@
 .subHeader-left-left {
   padding-right: 0.5rem;
 }
-.subHeader-left-left div {
+.subHeader-left-left ~ div {
   display: flex;
 }
+.subheader-left-title {
+  cursor: pointer;
+  display: flex;
+  transition: all 0.3s ease;
+}
+
 .subHeader-left-left .arrow-down {
+  cursor: pointer;
   color: var(--color-main);
 }
 
@@ -71,11 +78,22 @@
 .subHeader-left-left a:hover i {
   color: white;
 }
+.subHeader-left-right {
+  flex-direction: column;
+}
+.subHeader-left-right p span {
+  margin-left: 1.5rem;
+}
 
 /* === Media Query Min 768px */
 
 @media screen and (min-width: 768px) {
+  .subHeader {
+    position: relative;
+    overflow: unset;
+  }
   .subHeader-container {
+    align-items: end;
     padding: 1rem;
   }
   .subHeader-left {
@@ -85,6 +103,10 @@
   }
   .subHeader-left-left {
     border-right: 1px solid var(--color-dark);
+  }
+
+  .subheader-left-title:hover .market {
+    display: block;
   }
   .subHeader-right {
     max-width: calc(100vw - 40%);
@@ -106,14 +128,22 @@
   .subHeader-right h4 {
     white-space: nowrap;
   }
+  /* === Hover Market  */
+  .subheader-left-title {
+    position: relative;
+  }
 }
 /* === Media Query Min 1024px */
 
-@media screen and (min-width:1024px) {
-  .subHeader-arrow{
+@media screen and (min-width: 1024px) {
+  .subheader-left-title{
+    cursor: unset;
+  }
+  .subHeader-arrow {
     display: flex;
     align-items: center;
-    min-width: 85px;
+    min-width: 90px;
+    margin-right: 0.5rem;
   }
   .subHeader-arrow i {
     margin-right: 5px;

@@ -1,0 +1,31 @@
+.spot-form-input {
+  display: flex;
+  align-items: center;
+
+  border-radius: 5px;
+  padding: 0.7rem;
+
+  background-color: rgb(43, 49, 57);
+}
+.spot-form-input:hover {
+  outline: 1px solid var(--color-primary);
+}
+.spot-form-input input {
+  transition: all 0.2s ease;
+  color: white;
+  padding: 0 0.5rem;
+  direction: rtl;
+  background: unset;
+  outline: unset;
+  border: unset;
+  width: 100%;
+}
+.spot-form-input div:first-child {
+  color: var(--color-main);
+}
+
+/* === === */
+.dropdown-form-input{
+  display: flex;
+  gap: 1rem;
+}

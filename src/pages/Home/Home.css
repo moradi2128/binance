@@ -1,0 +1,64 @@
+header {
+  grid-area: header;
+}
+.subHeader {
+  grid-area: subHeader;
+}
+#market {
+  grid-area: market;
+  background-color: var(--bg-dark-components);
+  padding: 1rem;
+  height: 100%;
+}
+.grid {
+  display: grid;
+  align-items: start;
+  overflow: hidden;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 430px 200px;
+  grid-template-areas:
+    "header"
+    "subHeader"
+    "chart"
+    "userInfo";
+
+  gap: 4px;
+  margin-bottom: 113px;
+}
+@media screen and (min-width: 768px) {
+  .grid {
+    
+    gap: 4px;
+    grid-template-areas:
+      "header header header"
+      "subHeader subHeader subHeader"
+      "chart chart spot"
+      "trades orderBook spot"
+      "userInfo userInfo spot";
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:
+      minmax(64px, auto) minmax(64px, 90px) minmax(200px, 390px)
+      minmax(350px, 445px) minmax(230px, 250px);
+    margin-bottom: unset;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .grid {
+    background-color: rgb(37, 41, 48);
+    gap: 1px;
+    grid-template-areas:
+      "header header header"
+      "subHeader subHeader market"
+      "orderBook chart market"
+      "orderBook spot trades"
+      "userInfo userInfo userInfo";
+
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .grid {
+    grid-template-columns: 1fr 2.5fr 1fr;
+  }
+}

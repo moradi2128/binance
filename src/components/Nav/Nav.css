@@ -1,6 +1,7 @@
 nav {
   background-color: var(--bg-dark-components);
   position: relative;
+  z-index: 1000;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -27,6 +28,12 @@ nav {
 .project-menu .navItem {
   padding: 1rem 0;
   margin: auto;
+}
+.project-menu-inner-container {
+  visibility: hidden;
+}
+.project-menu:hover .project-menu-inner-container {
+  visibility: visible;
 }
 .logo {
   font-size: 18px;
@@ -77,7 +84,7 @@ nav {
 .navSlide-bottom {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 .navbar-right-container {
   display: none;
@@ -88,9 +95,10 @@ nav {
   display: none;
 }
 @media screen and (min-width: 768px) {
+  
   .setting,
   .question {
-    display: block;
+    display: flex;
   }
 }
 /* === Media Query 1024 === */
@@ -98,11 +106,13 @@ nav {
   display: none;
 }
 @media screen and (min-width: 1024px) {
+  nav {
+    padding: 0.4rem 1rem;
+  }
   .project-menu {
     display: block;
     position: relative;
     padding-left: 0.5rem;
-    transition: all 0.3s ease;
   }
   .project-menu .active,
   .project-menu-icon:hover {
@@ -112,6 +122,7 @@ nav {
   .project-menu .project-menu-icon {
     font-size: x-large;
     cursor: pointer;
+    display: flex;
   }
   .arrow-right {
     color: var(--color-primary);
@@ -129,21 +140,16 @@ nav {
     transition: all 0.3s ease;
   }
   .project-menu-inner-container {
-    visibility: hidden;
     overflow: hidden;
     position: fixed;
+    z-index: 999;
     inset: 0px auto auto 0px;
     transform: translate3d(0px, 70px, 0px);
     background-color: var(--color-dark);
   }
-  .project-menu-show {
-    visibility: visible;
-  }
-  .project-menu:hover .project-menu-inner-container {
-    transition: all 0.3s ease;
-    visibility: visible;
-  }
+
   .project-menu-inner {
+    padding: 1rem;
     width: 1200px;
     display: flex;
     flex-wrap: wrap;
@@ -156,13 +162,16 @@ nav {
   .navSlide-top {
     display: none;
   }
+  .navSlide-bottom {
+    gap: 1rem;
+  }
   .navItem {
     position: relative;
   }
   .nav-list-inner {
     z-index: 999;
     position: fixed;
-    transform: translate3d(0px, 30px, 0px);
+    transform: translate3d(0px, 7px, 0px);
     min-width: 0px;
     background-color: rgb(30, 35, 41);
     box-shadow: rgb(0 0 0 / 8%) 0px 0px 20px;
@@ -188,7 +197,7 @@ nav {
     width: 100%;
   }
   .project-menu-inner-container {
-    top: 10%;
+    top: 69px;
     left: 7%;
     right: 7%;
     transform: unset;

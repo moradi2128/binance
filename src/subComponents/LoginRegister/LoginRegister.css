@@ -1,0 +1,6 @@
+.loginRegister span{
+margin: 0 .3rem;
+}
+.loginRegister a{
+color: var(--color-primary);
+}

@@ -1,0 +1,22 @@
+.Spot-btn-item {
+  width: 100%;
+  outline: 0;
+  border: 0;
+  padding: 0.5rem;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.Spot-btn-item.green {
+  background-color: rgb(14, 203, 129);
+}
+.Spot-btn-item.green:hover {
+  background-color: rgb(37, 207, 142);
+}
+.Spot-btn-item.red {
+  background-color: rgb(246, 70, 93);
+}
+.Spot-btn-item.red:hover {
+  background-color: rgb(245, 99, 119);
+}

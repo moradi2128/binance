@@ -1,0 +1,21 @@
+
+.market-list-inner {
+  margin: 5px 0;
+  height: 100%;
+}
+.market-list-inner .market-list-header-item h4 {
+  color: #cdcdcd;
+}
+.market-list-inner .market-list-header-item h4 span {
+  color: rgb(132, 142, 156);
+}
+
+
+.market-list-inner .market-list-header-container {
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 3px 0;
+}
+.market-list-inner .market-list-header-container:hover {
+  background-color: rgb(43, 49, 57);
+}

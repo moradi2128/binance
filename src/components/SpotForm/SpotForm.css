@@ -1,0 +1,30 @@
+.spot-form-list {
+  width: 100%;
+}
+/* === === */
+.spot-type-avbl {
+  padding: 1rem;
+}
+.spot-type-avbl div {
+  color: var(--color-main);
+}
+.spot-type-avbl div span {
+  color: white;
+  margin-left: 5px;
+}
+
+/* === Form === */
+
+.spot-form {
+  padding: 1rem;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.percent-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}

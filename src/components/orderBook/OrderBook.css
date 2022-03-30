@@ -1,0 +1,165 @@
+.orderBook {
+  height: 100%;
+  padding: 1rem;
+  grid-area: orderBook;
+  background-color: var(--bg-dark-components);
+  overflow: hidden;
+}
+.orderBook-list-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 660px;
+}
+.orderBook .market-list {
+  height: unset;
+  width: 100%;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.orderBook .market-list-db {
+  display: block;
+}
+.orderBook .market-list-dn {
+  display: none;
+}
+/* === Header === */
+.orderBook-header {
+  padding-bottom: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.orderBook-header svg {
+  width: 25%;
+  cursor: pointer;
+  color: var(--color-main);
+}
+.orderBook-header div {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+.orderBook .market-list-header-container .market-list-header-item:first-child,
+.orderBook .market-list-header-container .market-list-header-item:last-child {
+  min-width: 68px;
+}
+/* Sell Section */
+.orderBook-sell-container {
+  display: none;
+}
+.orderBook-header-sell {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.orderBook-header-sell p,
+.orderBook-header-sell-right a {
+  color: var(--color-main);
+}
+.orderBook-header-sell-right a:hover {
+  color: var(--color-primary);
+}
+.orderBook .display-none-flexM {
+  display: none !important;
+}
+/* === tick Content === */
+.tick-content {
+  position: relative;
+  cursor: pointer;
+}
+
+.tick-content-container {
+  visibility: hidden;
+  background-color: rgb(30, 35, 41);
+  box-shadow: rgb(0 0 0 / 8%) 0px 7px 14px, rgb(0 0 0 / 8%) 0px 3px 6px,
+    rgb(94 102 115 / 90%) 0px 0px 1px inset;
+  color: rgb(234, 236, 239);
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 9px 1rem;
+
+  position: absolute;
+  top: 20px;
+  transition: all 0.2s ease;
+}
+.tick-content-container input {
+  margin-right: 5px;
+}
+.tick-content:hover .tick-content-container {
+  visibility: visible;
+}
+.tick-content-container li {
+  white-space: nowrap;
+  cursor: pointer;
+}
+.tick-content-container li:hover {
+  color: var(--color-primary);
+}
+@media screen and (min-width: 768px) {
+  .orderBook-list-container {
+    height: 114%;
+    flex-direction: column;
+    gap: unset;
+    justify-content: unset;
+  }
+
+  .orderBook-header {
+    justify-content: space-between;
+  }
+  .orderBook-header-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  .orderBook-sell-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .orderBook-header-icons svg,
+  .orderBook-header-right svg {
+    color: var(--color-main);
+    cursor: pointer;
+    font-size: large;
+  }
+  .orderBook-header-right {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .orderBook-header-right div:first-child {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .orderBook-header div {
+    width: unset;
+    justify-content: unset;
+  }
+  .orderBook-header svg {
+    width: unset;
+  }
+  .orderBook .display-none-flexM {
+    display: flex !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .orderBook-list-container {
+    height: 100%;
+  }
+
+  .tick-content-container {
+    right: 0;
+  }
+}
+.orderBook-list-container-sell {
+  height: 95%;
+}

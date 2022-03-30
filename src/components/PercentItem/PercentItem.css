@@ -1,0 +1,12 @@
+.percent-item {
+  color: var(--color-main);
+  background-color: #2b3139;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+}
+.percent-item:hover {
+  color: var(--color-primary);
+}
+
