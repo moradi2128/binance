@@ -7,10 +7,10 @@ const MarketItem = (props) => {
   
   // === Star List === 
   const [starList, setStarList] = useState("");
+
   const handlerStar = (e, item) => {
-   
-  
     e.preventDefault();
+
     if (e.target.style.color === "rgb(240, 185, 11)") {
       e.target.style.color = "";
       setStarList(starList.filter((i) => i.id !== item.id));
@@ -25,7 +25,7 @@ const MarketItem = (props) => {
         starList.length !== 0 ? (
           starList.map((item) => {
             return (
-              <div className="market-list-header-container" key={item.id}>
+              <div href="/" className="market-list-header-container" key={item.id}>
                 <div className="market-list-header-item">
                   <AiFillStar onClick={(e) => handlerStar(e, item)} />
                   <h4>
@@ -53,7 +53,8 @@ const MarketItem = (props) => {
       ) : (
         props.data.map((item) => {
           return (
-            <div className="market-list-header-container" key={item.id}>
+            
+            <div href="/" className="market-list-header-container" key={item.id}>
               <div className="market-list-header-item">
                 <AiFillStar onClick={(e) => handlerStar(e, item)} />
                 <h4>

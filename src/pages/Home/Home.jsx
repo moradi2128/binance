@@ -10,9 +10,17 @@ import Chart from "../../components/Chart/Chart";
 import Trades from "../../components/Trades/Trades";
 import Spot from "../../components/Spot/Spot";
 import UserInfo from "../../components/UserInfo/UserInfo";
-import Modal from "../../components/Modal/Modal";
+import Loading from "../../subComponents/Loading/Loading";
 
 const Home = () => {
+  // === Loading Page ===
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      setIsLoading(false);
+    });
+  }, []);
+
   // === Media Query 768 px ===
   const [matchesM, setMatchesM] = useState(
     window.matchMedia("(min-width: 768px)").matches
@@ -35,6 +43,11 @@ const Home = () => {
 
   return (
     <div className="grid">
+      {isLoading && (
+        <div className="loading-home">
+          <Loading />
+        </div>
+      )}
       <Header />
       <SubHeader />
       <Chart />
@@ -48,7 +61,7 @@ const Home = () => {
           {/* <OrderBook /> */}
         </>
       )}
-       {/* Media Query 768px */}
+      {/* Media Query 768px */}
       {matchesM && (
         <>
           <Trades />

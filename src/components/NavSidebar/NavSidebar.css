@@ -11,12 +11,12 @@
   display: flex;
   font-size: x-large;
   transition: all 0.2s ease;
-  transform: rotate(180deg);
+  transform: rotate(0deg);
 }
 .arrow-down {
   transition: all 0.2s ease;
   color: var(--color-primary);
-  transform: rotate(0deg);
+  transform: rotate(180deg);
 }
 
 /* === NavItem dropDown === */
@@ -140,7 +140,7 @@
   .navItem:hover .arrow {
     transition: all 0.2s ease;
     color: var(--color-primary);
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
   .nav-item {
     padding: 1rem;

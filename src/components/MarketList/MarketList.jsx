@@ -19,25 +19,20 @@ const MarketList = () => {
   const [change, setChange] = useState(false);
   const [starList, setStarList] = useState(false);
   // === Search Filter ===
-  useEffect(
-    () => {
-      if (search !== "") {
-        const filtered = marketData[liActive].subData.filter((item) => {
-          return Object.values(item)
-            .join()
-            .toLowerCase()
-            .includes(search.toLowerCase());
-        });
-        setSearchResult(filtered);
-      } else {
-        setSearchResult(marketData[liActive].subData);
-      }
-    },
-    [liActive],
-    [search],
-    [marketData[liActive].subData]
-  );
-  console.log(searchResult);
+  useEffect(() => {
+    if (search !== "") {
+      const filtered = marketData[liActive].subData.filter((item) => {
+        return Object.values(item)
+          .join()
+          .toLowerCase()
+          .includes(search.toLowerCase());
+      });
+      setSearchResult(filtered);
+    } else {
+      setSearchResult(marketData[liActive].subData);
+    }
+  }, [liActive, search, marketData[liActive].subData]);
+
   return (
     <>
       <form>
@@ -99,19 +94,12 @@ const MarketList = () => {
             </div>
           </div>
           <div className="market-list-item">
-            {starList ? (
-              <MarketItem
-                starList="true"
-                change={change}
-                title={marketData[liActive].title}
-              />
-            ) : (
-              <MarketItem
-                change={change}
-                data={searchResult}
-                title={marketData[liActive].title}
-              />
-            )}
+            <MarketItem
+              starList={starList}
+              change={change}
+              data={searchResult}
+              title={marketData[liActive].title}
+            />
           </div>
         </div>
       </div>
